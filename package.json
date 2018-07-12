@@ -1,6 +1,6 @@
 {
   "name": "react-slick",
-  "version": "0.23.6",
+  "version": "0.23.7",
   "description": " React port of slick carousel",
   "main": "./lib",
   "files": [
@@ -10,7 +10,11 @@
   "scripts": {
     "start": "gulp server",
     "build": "gulp clean && gulp sass && gulp copy && webpack",
-    "postinstall": "babel ./src --out-dir ./lib && gulp dist",
+    "prepublish": "babel ./src --out-dir ./lib && gulp dist",
+    "prepare": "babel ./src --out-dir ./lib && gulp dist",
+    "prepublishOnly": "babel ./src --out-dir ./lib && gulp dist",
+    "prepack": "babel ./src --out-dir ./lib && gulp dist",
+    "postpack": "babel ./src --out-dir ./lib && gulp dist",
     "test": "eslint src && jest",
     "test:watch": "jest --watch",
     "lint": "eslint src",
